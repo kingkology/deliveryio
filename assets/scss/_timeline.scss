@@ -1,0 +1,386 @@
+/*================ Timeline ==================*/
+.timeline {
+    position: relative;
+
+    .timeline-block {
+        display: block;
+        width: 50%;
+        padding: 0 15px;
+        position: relative;
+        margin-top: 100px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        .timeline-bubble {
+            height: 10px;
+            width: 10px;
+            border-radius: 10px;
+            position: absolute;
+            left: -5px;
+            top: 15px;
+            z-index: 1;
+        }
+
+        &.left {
+            float: left;
+
+            &:before {
+                content: "";
+                height: 10px;
+                width: 10px;
+                display: inline-block;
+                top: 10px;
+                right: 10px;
+                border: 10px solid rgba(0, 0, 0, 0.2);
+                position: absolute;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+            }
+
+            .timeline-bubble {
+                left: auto;
+                right: -5px;
+            }
+
+            &.border-warning {
+                .card {
+                    border-right: 4px solid #f5a811 !important;
+                }
+
+                &:before {
+                    border-color: #f5a811 !important;
+                }
+            }
+
+            &.border-primary {
+                .card {
+                    border-right: 4px solid #7979ff !important;
+                }
+
+                &:before {
+                    border-color: #7979ff !important;
+                }
+            }
+
+            &.border-danger {
+                .card {
+                    border-right: 4px solid #f63b55 !important;
+                }
+
+                &:before {
+                    border-color: #f63b55 !important;
+                }
+            }
+
+            &.border-success {
+                .card {
+                    border-right: 4px solid #0fd793 !important;
+                }
+
+                &:before {
+                    border-color: #0fd793 !important;
+                }
+            }
+
+        }
+
+        &.right {
+            float: right;
+
+            &:before {
+                content: "";
+                height: 10px;
+                width: 10px;
+                display: inline-block;
+                top: 10px;
+                left: 10px;
+                border: 10px solid rgba(0, 0, 0, 0.2);
+                position: absolute;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+            }
+
+            &.border-warning {
+                .card {
+                    border-left: 4px solid #f5a811 !important;
+                }
+
+                &:before {
+                    border-color: #f5a811 !important;
+                }
+            }
+
+            &.border-primary {
+                .card {
+                    border-left: 4px solid #7979ff !important;
+                }
+
+                &:before {
+                    border-color: #7979ff !important;
+                }
+            }
+
+            &.border-danger {
+                .card {
+                    border-left: 4px solid #f63b55 !important;
+                }
+
+                &:before {
+                    border-color: #f63b55 !important;
+                }
+            }
+
+            &.border-success {
+                .card {
+                    border-left: 4px solid #0fd793 !important;
+                }
+
+                &:before {
+                    border-color: #0fd793 !important;
+                }
+            }
+
+
+        }
+
+
+
+    }
+
+    &:after {
+        content: "";
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        width: 1px;
+        background: #dddddd;
+        top: 0;
+        z-index: 0;
+    }
+
+
+    &.left-only {
+        padding-left: 30px;
+
+        &:after {
+            left: 15px;
+        }
+
+        .timeline-block {
+            padding: 0;
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 4px;
+            border-left-width: 3px;
+            border-left-style: solid;
+
+            &.left {
+                float: none;
+
+                .card {
+                    border: 0 !important;
+                }
+
+                &:before {
+                    content: "";
+                    left: -6px;
+                    position: absolute;
+                }
+            }
+
+            .timeline-bubble {
+                left: -22px;
+            }
+        }
+    }
+
+    &.right-only {
+        padding-right: 30px;
+
+        &:after {
+            left: auto;
+            right: 15px;
+        }
+
+        .timeline-block {
+            padding: 0;
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 4px;
+            border-right-width: 3px;
+            border-right-style: solid;
+
+            &.right {
+                float: none;
+
+                .card {
+                    border: 0 !important;
+                }
+
+                &:before {
+                    content: "";
+                    right: -6px;
+                    left: auto;
+                    position: absolute;
+                }
+            }
+
+            .timeline-bubble {
+                left: auto;
+                right: -22px;
+            }
+        }
+    }
+
+    &.center-only {
+        padding-right: 0px;
+        padding-top: 15px;
+
+        &:after {
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            z-index: 0;
+            top: 5px;
+        }
+
+        .timeline-block {
+            padding: 0;
+            width: 100%;
+            margin-top: 25px;
+            border-radius: 4px;
+            border-top-width: 3px;
+            border-top-style: solid;
+            z-index: 1;
+            float: none;
+
+            .card {
+                border: 0 !important;
+            }
+
+            &:before {
+                content: "";
+                right: 0;
+                left: 0;
+                position: absolute;
+            }
+
+
+            .timeline-bubble {
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                z-index: 0;
+                top: -24px;
+            }
+
+            &:before {
+                content: "";
+                height: 10px;
+                width: 10px;
+                display: inline-block;
+                top: -10px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                border: 10px solid rgba(0, 0, 0, 0.2);
+                position: absolute;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+            }
+
+            &.border-warning {
+
+                &:before {
+                    border-color: #f5a811 !important;
+                }
+            }
+
+            &.border-primary {
+
+                &:before {
+                    border-color: #7979ff !important;
+                }
+            }
+
+            &.border-danger {
+
+
+                &:before {
+                    border-color: #f63b55 !important;
+                }
+            }
+
+            &.border-success {
+
+
+                &:before {
+                    border-color: #0fd793 !important;
+                }
+            }
+
+
+        }
+    }
+}
+
+.timeline-small {
+    li {
+        border: 0;
+        padding-left: 50px;
+        background-color: transparent;
+        border: 0;
+
+        .avatar {
+            position: absolute;
+            left: 13px;
+            top: 13px;
+            border-width: 3px;
+            border-style: solid;
+            z-index: 1;
+            border-radius: 15px;
+
+            &:after {
+                content: "";
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background: #ffffff;
+            }
+        }
+
+        &:before {
+            content: "";
+            height: 1px;
+            width: 12px;
+            background: rgba(0, 0, 0, 0.1);
+            display: block;
+            position: absolute;
+            left: 32px;
+            top: 22px;
+            z-index: 0;
+        }
+
+        &:after {
+            content: "";
+            height: 100%;
+            width: 1px;
+            background: rgba(0, 0, 0, 0.1);
+            display: block;
+            position: absolute;
+            left: 23px;
+            top: 0;
+            z-index: 0;
+        }
+    }
+}

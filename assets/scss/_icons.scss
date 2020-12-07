@@ -1,0 +1,213 @@
+.icon:after {
+    font-family: 'ElegantIcons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: middle
+}
+
+.social-media {
+    ul {
+        margin: 10px 0px;
+        padding: 0;
+        display: inline-block;
+
+        li {
+            display: inline-block;
+            float: left;
+            width: auto;
+
+            a {
+                display: block;
+                padding: 0;
+                height: 30px;
+                width: 30px;
+                line-height: 30px;
+                border-radius: 30px;
+                color: $color-template-text;
+                font-size: 14px;
+
+                &:hover {
+                    background-color: $color-template-primary;
+                    color: $color-template-primary-text;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &.large {
+            li {
+                a {
+                    height: 40px;
+                    width: 40px;
+                    line-height: 40px;
+                    border-radius: 40px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    &.vertical-social {
+        ul {
+            li {
+                display: block;
+                width: 100%;
+                clear: left;
+            }
+        }
+    }
+
+    &.text-center {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.icons {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 4px;
+
+    i,
+    span {
+        vertical-align: middle;
+    }
+
+    &.round {
+        border-radius: 50%;
+    }
+
+    &.bordered {
+        border: 1px solid $color-template-primary;
+        background: lighten($color-template-background, 5%);
+    }
+
+    &.icon-150 {
+        height: 150px;
+        line-height: 140px;
+        width: 150px;
+        font-size: 70px;
+    }
+
+    &.icon-140 {
+        height: 140px;
+        line-height: 130px;
+        width: 140px;
+        font-size: 65px;
+    }
+
+    &.icon-130 {
+        height: 130px;
+        line-height: 120px;
+        width: 130px;
+        font-size: 60px;
+    }
+
+    &.icon-120 {
+        height: 120px;
+        line-height: 110px;
+        width: 120px;
+        font-size: 55px;
+    }
+
+    &.icon-110 {
+        height: 110px;
+        line-height: 100px;
+        width: 110px;
+        font-size: 50px;
+    }
+
+    &.icon-100 {
+        height: 100px;
+        line-height: 90px;
+        width: 100px;
+        font-size: 45px;
+    }
+
+    &.icon-90 {
+        height: 90px;
+        line-height: 80px;
+        width: 90px;
+        font-size: 40px;
+    }
+
+    &.icon-80 {
+        height: 80px;
+        line-height: 70px;
+        width: 80px;
+        font-size: 35px;
+    }
+
+    &.icon-70 {
+        height: 70px;
+        line-height: 68px;
+        width: 70px;
+        font-size: 28px;
+    }
+
+    &.icon-60 {
+        height: 60px;
+        line-height: 58px;
+        width: 60px;
+        font-size: 26px;
+    }
+
+    &.icon-50 {
+        height: 50px;
+        line-height: 48px;
+        width: 50px;
+        font-size: 24px;
+    }
+
+    &.icon-40 {
+        height: 40px;
+        line-height: 38px;
+        width: 40px;
+        font-size: 20px;
+    }
+
+    &.icon-30 {
+        height: 30px;
+        line-height: 28px;
+        width: 30px;
+        font-size: 16px;
+    }
+
+    &.icon-20 {
+        height: 20px;
+        line-height: 18px;
+        width: 20px;
+        font-size: 15px;
+    }
+}
+
+.dot-notification {
+    height: 6px;
+    width: 6px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -2px 0 0 0;
+}
+
+@media screen and (max-width:763px) {
+    .social-media {
+        &.vertical-social {
+            ul {
+                display: block;
+
+                li {
+                    clear: none;
+                    width: auto;
+                    float: left;
+                }
+            }
+        }
+    }
+}

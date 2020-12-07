@@ -1,0 +1,26 @@
+.cover-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+.gallery-pic {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: 1px;
+}
+.user-pic {
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin: 0px;
+    border-radius: 4px 4px 0 0;
+}
+
+.posts{
+    .grid-sizer{
+        width: 50%;
+    }
+}

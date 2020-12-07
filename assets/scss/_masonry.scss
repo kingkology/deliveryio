@@ -1,0 +1,63 @@
+/* fluid2 columns */
+.twocolumn .grid-sizer,
+.twocolumn .grid-item {
+    width: 48.5%;
+    padding: 0 1%;
+}
+
+.twocolumn .grid-item.width-double {
+    width: 99%;
+    padding: 0 1%;
+}
+
+/* fluid 3 columns */
+.threecolumn .grid-sizer,
+.threecolumn .grid-item {
+    width: 31.3%;
+    padding: 0 1%;
+}
+
+/* fluid 5 columns */
+.fivecolumn .grid-sizer,
+.fivecolumn .grid-item {
+    width: 19%;
+    padding: 0 1%;
+}
+
+.fivecolumn .grid-item.width-double {
+    width: 39%;
+    padding: 0 1%;
+}
+
+
+@media screen and (max-width:767px) {
+
+    .threecolumn .grid-sizer,
+    .threecolumn .grid-item {
+        width: 48.0%;
+        padding: 0 1%;
+    }
+}
+
+@media screen and (max-width:640px) {
+
+    .threecolumn .grid-sizer,
+    .threecolumn .grid-item {
+        width: 100%;
+        padding: 0;
+    }
+
+
+    /* fluid 5 columns */
+    .fivecolumn .grid-sizer,
+    .fivecolumn .grid-item {
+        width:48%;
+        padding: 0 1%;
+    }
+
+    .fivecolumn .grid-item.width-double {
+        width: 99%;
+        padding: 0 1%;
+    }
+
+}

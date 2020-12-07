@@ -1,0 +1,21 @@
+/* footer */
+
+.footer {
+    background-color: $footer-background-primary;
+    color: $footer-secondary-text;
+
+    .btn-link {
+        font-weight: 400;
+        color: $footer-primary-text;
+    }
+
+    &.footer-dark {
+        background-color: #222222;
+        color: rgba(255, 255, 255, 0.8);
+
+        a,
+        .btn-link {
+            color: #ffffff;
+        }
+    }
+}

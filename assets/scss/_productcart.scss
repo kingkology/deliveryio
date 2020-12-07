@@ -1,0 +1,54 @@
+.addtocartanimation {
+    position: fixed;
+    z-index: 9999;
+    border-radius: 0;
+    line-height: 30px;
+    font-size: 20px;
+    background-color: $color-template-primary;
+    color: $color-template-primary-text;
+    border-radius: 4px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 0px;
+    margin-left: 0px;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    opacity: 0;
+    margin-top: -80px;
+    margin-left: -60px;
+
+    @extend .transition-05;
+
+    img {
+        max-height: 100px;
+        max-height: 100px;
+        margin: 0 auto;
+        border-radius: 5px;
+        @extend .transition-05;
+        margin-bottom: 10px;
+
+    }
+
+    .countercartnumber {
+        border-radius: 4px;
+        padding: 5px 15px;
+        line-height: 20px;
+        color: $color-template-primary;
+        background-color: $color-template-primary-text;
+        display: inline-block;
+        margin: 0 auto;
+        @extend .transition-05;
+    }
+
+    &.active {
+        margin-top: -20px;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        opacity: 1;
+    }
+
+}

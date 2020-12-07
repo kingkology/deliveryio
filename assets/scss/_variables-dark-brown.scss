@@ -1,0 +1,25 @@
+$blue: #84C3FF;
+
+@function set-notification-text-color($color) {
+    @if (lightness($color) > 76) {
+        @return #444444; // Lighter backgorund, return dark color
+    }
+
+    @else {
+        @return #ffffff; // Darker background, return light color
+    }
+}
+
+$color-template-background: #edf3f8;
+$color-template-text: #666666;
+$color-template-primary: #795548;
+$color-template-primary-text:set-notification-text-color($color-template-primary);
+
+$header-background-primary: #ffffff;
+$header-primary-text: set-notification-text-color($header-background-primary);
+$header-secondary-text:lighten($header-primary-text, 30%);
+
+
+$footer-background-primary: #F7F7F7;
+$footer-primary-text: set-notification-text-color($header-background-primary);
+$footer-secondary-text:lighten($header-primary-text, 30%);

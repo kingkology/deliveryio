@@ -1,0 +1,31 @@
+.accordion {
+    .card {
+        margin-bottom: 1px;
+
+        border: 0;
+
+        .card-header {
+            padding: 0.95rem 1.25rem;
+            background-color: transparent;
+            border: 0;
+
+            .arrowicon {
+                display: inline-block;
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+            }
+
+            &.collapsed,
+            .collapsed {
+                .arrowicon {
+                    transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

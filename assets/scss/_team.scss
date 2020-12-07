@@ -1,0 +1,21 @@
+.team {
+    overflow: hidden;
+    .team-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        background: transparent;
+        color: #ffffff;        
+        @extend .transition-05;
+        a{
+            color: #ffffff;
+        }
+    }
+    &:hover{
+        .team-overlay {
+            background: rgba(0, 0, 0, 0.2)
+        }
+    }
+}

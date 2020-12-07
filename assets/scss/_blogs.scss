@@ -1,0 +1,43 @@
+.blogs {
+    position: relative;
+    overflow: hidden;
+
+    .background {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        @extend .transition-05;
+    }
+
+    .overlay-blog {
+        position: absolute;
+        z-index: 2;
+        bottom: -100%;
+        display: block;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #ffffff;
+        padding: 25px;
+        @extend .transition-05;
+
+        a {
+            color: #ffffff;
+        }
+    }
+
+    &:hover, &.active {
+        .overlay-blog {
+            bottom: 0;
+        }
+
+        .background {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+        }
+    }
+
+}
