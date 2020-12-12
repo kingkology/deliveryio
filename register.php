@@ -235,6 +235,9 @@ if ($lamonth==12)
                                 Already have account? Please <a href="login.php">Sign In</a> here.
                             </p>
                         </div>
+                        <div class="mb-4">
+                            <p><br> <a href="index.php" class="text-white"><i class="fa fa-dashboard"></i>Home</a> </p>
+                        </div>
                     </div>
                 </div>
             </div>

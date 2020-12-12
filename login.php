@@ -194,7 +194,7 @@ if ($lamonth==12)
             <div class="snow"></div>
             <div class="snow"></div>
             <?php endif?>
-            
+
             <div class="background opac">
                 <img src="assets/img/login.jpg" alt="">
             </div>
@@ -234,6 +234,9 @@ if ($lamonth==12)
                         </div>
                         <div class="mb-4">
                             <p>Do not have account yet?<br>Please <a href="register.php" class="text-white">Sign up</a> here.</p>
+                        </div>
+                        <div class="mb-4">
+                            <p><br> <a href="index.php" class="text-white"><i class="fa fa-dashboard"></i>Home</a> </p>
                         </div>
                     </div>
                 </div>
