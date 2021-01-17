@@ -60,7 +60,26 @@ if ($lamonth==12)
     <link href="../../assets/css/style-maroon.css" rel="stylesheet" id="style">
 </head>
 
-<body class="ui-rounded">
+
+<?php 
+if (isset($_SESSION['backend_message'])) 
+{
+  ?>
+  <body class="ui-rounded" onload="Swal.fire('', '<?php echo $_SESSION['backend_message']; ?>', '<?php echo $_SESSION['message_type']; ?>');">
+  <?php
+  unset($_SESSION['message_type']);
+  unset($_SESSION['backend_message']);
+  session_unset(); 
+} 
+else 
+{
+?>
+<body class="ui-rounded" >
+<?php
+}
+?>
+
+
     <!-- Page laoder -->
     <div class="container-fluid pageloader">
      
