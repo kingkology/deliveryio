@@ -262,25 +262,31 @@ if ($lamonth==12)
     <!-- Begin page content -->
     <main class="flex-shrink-0 main-container">
 
-        <!-- page content goes here -->
-        <div class="section-100 bg-white" id="about">
-            <div class="container h-100">
-                <div class="row h-100 justify-content-center text-center">
-                  <div class="col-6 col-md-6 col-lg-6 ">
-                      <h4 class="font-weight-light text-uppercase text-mute">We are</h4>
-                      <h3 class="f-100 font-weight-bold">Delivery<span>io</span></h3>
-                      <h4 class="font-weight-medium">Delivery service providers</h4>
-                      <h4 class="font-weight-medium">We act as a 3rd party delivery service provided between a client and a seller/supplier.</h4>
-                      <p class="my-4"><br><span class="text-mute">Powered by <a href="https://maxartkiller.com/" target="_blank">I-Akortech</a></span></p>
-                  </div>
+      <!-- page about content goes here -->
+      <div id="about"  class="container-fluid bg-white px-0">
+          <div class="row no-gutters">
 
-                  <div class="col-6 col-md-6 col-lg-6">
-                    <img src="assets/img/c4.jpg" alt="Deliveryio">
-                  </div>
-                  
+            <div class="col-12 col-md-6 position-relative overflow-hidden section-150">
+                <div class="background">
+                    <img src="assets/img/c4.jpg" alt="about Deliveryio">
                 </div>
             </div>
-        </div>
+
+              <div class="col-12 col-md-6 section-150 px-3">
+                  <div class="row mx-0">
+                      <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
+                          <h6 class="font-weight-light text-uppercase text-mute">We are</h6>
+                          <h3 class="mt-3">Deliveryio</h3>
+                          <h5 class="font-weight-medium">Delivery service providers</h5>
+                          <p class="mt-4 text-mute">Our One<span> goal</span><span> is</span> to serve as the cheapest, most reliable and fastest 3rd party delivery service provider between any client and any seller/supplier.</p>
+
+                          <p class="my-4"><br><span class="text-mute">Powered by <a href="https:iakrotech.com/" target="_blank">I-Akrotech</a></span></p>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
 
 
