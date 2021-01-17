@@ -74,7 +74,24 @@ if ($lamonth==12)
 
 </head>
 
-<body class="ui-rounded">
+<?php 
+if (isset($_SESSION['backend_message'])) 
+{
+  ?>
+  <body class="ui-rounded" onload="Swal.fire('<?php echo $_SESSION['message_type']; ?>', '<?php echo $_SESSION['backend_message']; ?>', '<?php echo $_SESSION['message_type']; ?>');">
+  <?php
+  unset($_SESSION['message_type']);
+  unset($_SESSION['backend_message']);
+  session_unset(); 
+} 
+else 
+{
+?>
+<body class="ui-rounded" >
+<?php
+}
+?>
+
     <!-- Page laoder -->
     <div class="container-fluid pageloader">
         <?php if ($christmas=="christmas"):?>
@@ -334,9 +351,7 @@ if ($lamonth==12)
         <div class="container-fluid section-150 bg-white position-relative overflow-hidden">
             <div class="row mb-5">
                 <div class="container text-center">
-                    <h6 class="font-weight-light text-uppercase text-mute">Flexibility & Competibility</h6>
-                    <h2 class="mt-4">Build with best Framework</h2>
-                    <p class="font-weight-medium">Hand coded with Bootstrap 4, SCSS and JQuery</p>
+                    <h6 class="font-weight-light text-uppercase text-mute">Flexibility & Affordabiity</h6>
                 </div>
             </div>
             <br>
@@ -349,7 +364,7 @@ if ($lamonth==12)
                                 <div class="col-auto pr-0"><span class="icons icon-60 bg-default icon_star_alt mb-4"></span></div>
                                 <div class="col">
                                     <h5>User Experience</h5>
-                                    <p class="text-mute mt-3">User Experience is key priority for us and we always think about domains as well as users from those business domain.</p>
+                                    <p class="text-mute mt-3">User Experience is key priority for us and we always think about how best to make the platform user friendly.</p>
                                 </div>
                             </div>
                         </div>
@@ -357,8 +372,8 @@ if ($lamonth==12)
                             <div class="row mb-4">
                                 <div class="col-auto pr-0"><span class="icons icon-60 bg-default icon_genius mb-4"></span></div>
                                 <div class="col">
-                                    <h5>Unlimited Styles</h5>
-                                    <p class="text-mute mt-3">We have predefined 16+ styles and create very own new style by changing and recompiling provided varibles file in SCSS.</p>
+                                    <h5>Unlimited Possibilties</h5>
+                                    <p class="text-mute mt-3">Join our group of partners and earn as you book errands on behalf of your own clients.</p>
                                 </div>
                             </div>
                         </div>
@@ -366,8 +381,8 @@ if ($lamonth==12)
                             <div class="row mb-4">
                                 <div class="col-auto pr-0"><span class="icons icon-60 bg-default icon_heart_alt mb-4"></span></div>
                                 <div class="col">
-                                    <h5>Loving Framework</h5>
-                                    <p class="text-mute mt-3">We and many of us love bootstrap framework so we have build Oneuiux with Bootstrap 4.4.1 version.</p>
+                                    <h5>Affordability</h5>
+                                    <p class="text-mute mt-3">Experience the cheapest delivery service you can ever find anywhere.</p>
                                 </div>
                             </div>
                         </div>
@@ -376,26 +391,8 @@ if ($lamonth==12)
                             <div class="row mb-4">
                                 <div class="col-auto pr-0"><span class="icons icon-60 bg-default icon_images mb-4"></span></div>
                                 <div class="col">
-                                    <h5>Many Icons</h5>
-                                    <p class="text-mute mt-3">There are many posibility to use icons with any fonts icons. Here we have used elegant icons</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="row mb-4">
-                                <div class="col-auto pr-0"><span class="icons icon-60 bg-default icon_like mb-4"></span></div>
-                                <div class="col">
-                                    <h5>Clean Code</h5>
-                                    <p class="text-mute mt-3">We have practiced with clean code no more commented areas and only required comments. Also validated with W3C validator.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="row mb-4">
-                                <div class="col-auto pr-0"><span class="icons icon-60 bg-default icon_document_alt mb-4"></span></div>
-                                <div class="col">
-                                    <h5>Documentation</h5>
-                                    <p class="text-mute mt-3">We have added documentation to undertand basic folder structure and steps to change styles with code snippets.</p>
+                                    <h5>Quality Service</h5>
+                                    <p class="text-mute mt-3">Join our family and experience excellent customer service like no other.</p>
                                 </div>
                             </div>
                         </div>
@@ -409,59 +406,22 @@ if ($lamonth==12)
         </div>
 
         <div class="container-fluid position-relative px-0">
-            <div class="row no-gutters">
-                <div class="col-12 col-md-6 position-relative overflow-hidden section-150">
-                    <div class="background">
-                        <img src="assets/img/emotions.jpg" alt="">
-                        <div class="caption">
-                            <a href="https://unsplash.com/@mimithian?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer">
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                        <title>unsplash-logo</title>
-                                        <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
-                                    </svg>
-                                </span>
-                                <span>Mimi Thian</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 section-150 px-3">
-                    <div class="row mx-0">
-                        <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
-                            <h6 class="font-weight-light text-uppercase text-mute">Interfaces those speaks</h6>
-                            <h3 class="mt-3">Attach with Emotions</h3>
-                            <h5 class="font-weight-medium">Express your brand with OneUIUX</h5>
-                            <p class="mt-4 text-mute">Our One<span>UI</span><span>UX</span> HTML template is creatively hand crafter with consideration of human behaviour with consistancy and color contrast. We have created full website demo with multiple each domain/business demo unlike anyother template in market.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <h3><center><strong>Our Services</strong></center></h3>
+            
         </div>
         <div class="container-fluid bg-white px-0">
             <div class="row no-gutters">
                 <div class="col-12 col-md-6 position-relative overflow-hidden">
                     <div class="background">
-                        <img src="assets/img/businessdomain1.jpg" alt="">
-                        <div class="caption">
-                            <a href="https://unsplash.com/@austindistel?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer"> <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                        <title>unsplash-logo</title>
-                                        <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
-                                    </svg>
-                                </span>
-                                <span>Austin Distel</span>
-                            </a>
-                        </div>
+                        <img src="assets/img/food.jpg" alt="Food Delivery">
                     </div>
                 </div>
                 <div class="col-12 col-md-6 section-150 px-3">
                     <div class="row  mx-0">
                         <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
-                            <h6 class="font-weight-light text-uppercase text-mute">Best match for all</h6>
-                            <h3 class="mt-3">Domain/Business Demos</h3>
-                            <h5 class="font-weight-medium">Multiple Business websites</h5>
-                            <p class="mt-4 text-mute">One<span>UI</span><span>UX</span> HTML template includes multiple business demo with suitable domain and brand imaginations. Template also give essense of business domain by layout structure, color contrast and images used.</p>
+                            <h6 class="font-weight-light text-uppercase text-mute">Food Delivery</h6>
+                            <h3 class="mt-3">We help you pickup your food from any eatery at any given time.</h3>
+                            <h5 class="font-weight-medium">Just let us know when you need it.</h5>
                         </div>
                     </div>
                 </div>
@@ -470,30 +430,19 @@ if ($lamonth==12)
         </div>
         <div class="container-fluid px-0">
             <div class="row no-gutters">
-                <div class="col-12 col-md-6 position-relative overflow-hidden section-150">
-                    <div class="background">
-                        <img src="assets/img/savemoneytime.jpg" alt="">
-                        <div class="caption">
-                            <a href="https://unsplash.com/@danteov_seen?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer">
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                        <title>unsplash-logo</title>
-                                        <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
-                                    </svg>
-                                </span>
-                                <span>Nikola Jovanovic</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="col-12 col-md-6 section-150 px-3">
                     <div class="row mx-0">
                         <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
-                            <h6 class="font-weight-light text-uppercase text-mute">Save Time & Money</h6>
-                            <h3 class="mt-3">Grow fast & think beyond</h3>
-                            <h5 class="font-weight-medium">Value for money, ready to use template</h5>
-                            <p class="mt-4 text-mute">Our One<span>UI</span><span>UX</span> HTML template is ready to use template. You can use is by changes brand, content and images with suitable brand colors scheme. Use predefined stylesheet or change with scss variable and compile it.</p>
+                            <h6 class="font-weight-light text-uppercase text-mute">Package pickup</h6>
+                            <h3 class="mt-3">We pickup all forms of packages (small, medium, big)</h3>
+                            <h5 class="font-weight-medium">Fridge, letters, birthday cakes</h5>
                         </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 position-relative overflow-hidden section-150">
+                    <div class="background">
+                        <img src="assets/img/savemoneytime.jpg" alt="">
                     </div>
                 </div>
             </div>

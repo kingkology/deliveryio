@@ -65,7 +65,7 @@ if ($lamonth==12)
 if (isset($_SESSION['backend_message'])) 
 {
   ?>
-  <body class="ui-rounded" onload="Swal.fire('', '<?php echo $_SESSION['backend_message']; ?>', '<?php echo $_SESSION['message_type']; ?>');">
+  <body class="ui-rounded" onload="Swal.fire('<?php echo $_SESSION['message_type']; ?>', '<?php echo $_SESSION['backend_message']; ?>', '<?php echo $_SESSION['message_type']; ?>');">
   <?php
   unset($_SESSION['message_type']);
   unset($_SESSION['backend_message']);
