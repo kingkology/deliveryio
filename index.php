@@ -221,24 +221,24 @@ if ($lamonth==12)
             <div class=" ">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
                 </ol>
                 <div class="carousel-inner" style="width:100%;">
-                    <div class="carousel-item h-800">
-                        <div class="background" style="background-image: url(&quot;../assets/img/hero11.jpg&quot;);">
-                            <img src="../assets/img/hero11.jpg" alt="..." style="display: none;">
+                    <div class="carousel-item h-800 active" >
+                        <div class="background" style="background-image: url(&quot;assets/img/banner1.jpg&quot;);object-fit:contain;">
+                            <img src="assets/img/banner1.jpg" alt="..." style="display: none;">
                         </div>
                     </div>
                     <div class="carousel-item h-800">
-                        <div class="background" style="background-image: url(&quot;../assets/img/hero12.jpg&quot;);">
-                            <img src="../assets/img/hero12.jpg" alt="..." style="display: none;">
+                        <div class="background" style="background-image: url(&quot;assets/img/banner2.jpg&quot;);">
+                            <img src="assets/img/banner2.jpg" alt="..." style="display: none;">
                         </div>
                     </div>
-                    <div class="carousel-item h-800 active">
-                        <div class="background" style="background-image: url(&quot;../assets/img/hero10.jpg&quot;);">
-                            <img src="../assets/img/hero10.jpg" alt="..." style="display: none;">
+                    <div class="carousel-item h-800 ">
+                        <div class="background" style="background-image: url(&quot;assets/img/banner3.jpg&quot;);">
+                            <img src="assets/img/banner3.jpg" alt="..." style="display: none;">
                         </div>
                     </div>
                 </div>
