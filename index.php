@@ -201,8 +201,8 @@ if ($lamonth==12)
                 </a>
             </div>
             <div >
-                <a href="profile.php" class=""><span class="avatar avatar-30"><i class=" icon_id-2_alt"></i></span>Services</a>
                 <a href="#about" class=""><span class="avatar avatar-30"><i class=" icon_lightbulb_alt"></i></span>About</a>
+                <a href="#services" class=""><span class="avatar avatar-30"><i class=" icon_id-2_alt"></i></span>Services</a>
                 <a href="login.php" class=""><span class="avatar avatar-30"><i class="fa fa-lock"></i></span>Login</a>
                 <a href="register.php" class=""><span class="avatar avatar-30"><i class="fa fa-pencil"></i></span>Signup</a>
                 
@@ -227,18 +227,18 @@ if ($lamonth==12)
                 </ol>
                 <div class="carousel-inner" style="width:100%;">
                     <div class="carousel-item h-800 active" >
-                        <div class="background" style="background-image: url(&quot;assets/img/banner1.jpg&quot;);object-fit:contain;">
-                            <img src="assets/img/banner1.jpg" alt="..." style="display: none;">
+                        <div class="background" style="background-image: url(&quot;assets/img/banner1.jpg&quot;);">
+                            <img src="assets/img/banner1.jpg" alt="fast delivery" style="display: none;">
                         </div>
                     </div>
                     <div class="carousel-item h-800">
                         <div class="background" style="background-image: url(&quot;assets/img/banner2.jpg&quot;);">
-                            <img src="assets/img/banner2.jpg" alt="..." style="display: none;">
+                            <img src="assets/img/banner2.jpg" alt="safe delivery" style="display: none;">
                         </div>
                     </div>
                     <div class="carousel-item h-800 ">
                         <div class="background" style="background-image: url(&quot;assets/img/banner3.jpg&quot;);">
-                            <img src="assets/img/banner3.jpg" alt="..." style="display: none;">
+                            <img src="assets/img/banner3.jpg" alt="cheap" style="display: none;">
                         </div>
                     </div>
                 </div>
@@ -266,25 +266,19 @@ if ($lamonth==12)
         <div class="section-100 bg-white" id="about">
             <div class="container h-100">
                 <div class="row h-100 justify-content-center text-center">
-                    <div class="col-12 col-md-11 col-lg-10 align-self-center">
-                        <p class="font-weight-light text-uppercase text-mute">We are</p>
-                        <h1 class="f-200 font-weight-bold">One<span>UI</span><span>UX</span></h1>
-                        <h4 class="font-weight-medium">Creative & Unique Mobile<br>HTML Templates</h4>
-                        <p class="my-4">For the humans by the human<br><span class="text-mute">Hand Crafted by <a href="https://maxartkiller.com/" target="_blank">Maxartkiller</a> with </span><span class="text-danger">❤</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                  <div class="col-6 col-md-6 col-lg-6 ">
+                      <h4 class="font-weight-light text-uppercase text-mute">We are</h4>
+                      <h3 class="f-100 font-weight-bold">Delivery<span>io</span></h3>
+                      <h4 class="font-weight-medium">Delivery service providers</h4>
+                      <h4 class="font-weight-medium">We act as a 3rd party delivery service provided between a client and a seller/supplier.</h4>
+                      <p class="my-4"><br><span class="text-mute">Powered by <a href="https://maxartkiller.com/" target="_blank">I-Akortech</a></span></p>
+                  </div>
 
-        <div class="container-fluid section-150 position-relative overflow-hidden">
-            <div class="row mb-5">
-                <div class="container">
-                    <h2 class="font-weight-bold">Its time to fall in love with Creative design, Flexibility & Uniqueness.</h2>
-                    <p class="font-weight-medium text-mute my-4">User experienced user interfaces with HTML and CSS also providing flexibility of style color customization. We have created specific website template demos and component library which be used across any demo.</p>
+                  <div class="col-6 col-md-6 col-lg-6">
+                    <img src="assets/img/c4.jpg" alt="Deliveryio">
+                  </div>
+                  
                 </div>
-            </div>
-            <div class="bottom-right bottom-50">
-                <h2 class="f-200 opacity-5 text-truncate">UX Design</h2>
             </div>
         </div>
 
@@ -296,26 +290,26 @@ if ($lamonth==12)
                     <div class="row">
                         <div class="col-6 col-md-3 align-self-center">
                             <div class="text-center py-5">
-                                <h1 class="f-80"><span class="countertext">50</span>+</h1>
-                                <p class="text-mute text-uppercase">Components</p>
+                                <h1 class="f-80"><span class="countertext">50</span></h1>
+                                <p class="text-mute text-uppercase">Drivers</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 align-self-center">
                             <div class="text-center py-5">
-                                <h1 class="f-80"><span class="countertext">200</span>+</h1>
-                                <p class="text-mute text-uppercase">HTML Pages</p>
+                                <h1 class="f-80"><span class="countertext">200</span></h1>
+                                <p class="text-mute text-uppercase">Clients</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 align-self-center">
                             <div class="text-center py-5">
-                                <h1 class="f-80"><span class="countertext">3</span></h1>
-                                <p class="text-mute text-uppercase">Mobile Apps</p>
+                                <h1 class="f-80"><span class="countertext">600</span></h1>
+                                <p class="text-mute text-uppercase">Errands</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 align-self-center">
                             <div class="text-center py-5">
-                                <h1 class="f-80"><span class="countertext">16</span></h1>
-                                <p class="text-mute text-uppercase">Predefined Style</p>
+                                <h1 class="f-80"><span class="countertext">14</span></h1>
+                                <p class="text-mute text-uppercase">Partners</p>
                             </div>
                         </div>
                     </div>
