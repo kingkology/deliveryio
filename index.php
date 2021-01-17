@@ -442,26 +442,32 @@ else
                 </div>
                 <div class="col-12 col-md-6 position-relative overflow-hidden section-150">
                     <div class="background">
-                        <img src="assets/img/savemoneytime.jpg" alt="">
+                        <img src="assets/img/safe.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid section-150 position-relative overflow-hidden bg-white">
-            <div class="row mb-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-10">
-                            <h2 class="font-weight-bold">Default framework elements and useful third parties</h2>
-                            <p class="font-weight-medium text-mute my-4">We have used framework Bootstrap 4 and also included third parties for date range picker, multiselect and swiper and can be used anywhere template site wide.</p>
+
+        <div class="container-fluid bg-white px-0">
+            <div class="row no-gutters">
+                <div class="col-12 col-md-6 position-relative overflow-hidden">
+                    <div class="background">
+                        <img src="assets/img/med.png" alt="Food Delivery">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 section-150 px-3">
+                    <div class="row  mx-0">
+                        <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
+                            <h6 class="font-weight-light text-uppercase text-mute">Drug Delivery</h6>
+                            <h3 class="mt-3">We help you pickup your medicine from anywhere at any given time.</h3>
+                            <h5 class="font-weight-medium">From pharmacy, hospital etc</h5>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
-            <div class="bottom-right bottom-50">
-                <h2 class="f-200 opacity-5 text-truncate">Elements</h2>
-            </div>
+
         </div>
+
     </main>
     <!-- End of page content -->
 
