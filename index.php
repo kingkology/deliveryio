@@ -9,6 +9,10 @@ $ladatez = $dt->format('Y-m-d H:i:s');
 $latimez = $dt->format('H:i:s');
 
 $christmas="";
+$get_drivers=50;
+$get_clients=200;
+$get_errands=600;
+$get_partners=14;
 
 if ($lamonth==12)
 {
@@ -63,6 +67,10 @@ if ($lamonth==12)
     <!-- Custom styles for this template -->
     <link href="assets/css/style-maroon.css" rel="stylesheet" id="style">
 
+
+    <!-- Font Awesome -->
+    <link href="assets/libraries/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+    
 
 </head>
 
@@ -203,7 +211,7 @@ if ($lamonth==12)
             <div >
                 <a href="#about" class=""><span class="avatar avatar-30"><i class=" icon_lightbulb_alt"></i></span>About</a>
                 <a href="#services" class=""><span class="avatar avatar-30"><i class=" icon_id-2_alt"></i></span>Services</a>
-                <a href="login.php" class=""><span class="avatar avatar-30"><i class="fa fa-lock"></i></span>Login</a>
+                <a href="views/login/main.html" class=""><span class="avatar avatar-30"><i class="fa fa-lock"></i></span>Login</a>
                 <a href="register.php" class=""><span class="avatar avatar-30"><i class="fa fa-pencil"></i></span>Signup</a>
                 
             </div>
@@ -526,7 +534,15 @@ if ($lamonth==12)
 
 
     <!-- Required jquery and libraries -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    
+    <!-- JQuery -->
+    <script type="text/javascript" src="assets/libraries/jquery-3.4.0.min.js"></script>
+
+    <script type="text/javascript" src="assets/libraries/toaster/jquery.toaster.js"></script>
+    <script type="text/javascript" src="assets/libraries/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+    <script type="text/javascript" src="assets/libraries/kingslibrary.js"></script>
+
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 
@@ -566,6 +582,10 @@ if ($lamonth==12)
             });
 
         </script>
+
+
+       
+
 </body>
 
 </html>
