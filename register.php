@@ -21,10 +21,10 @@ if ($lamonth==12)
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="AKROTECH HTML errand website . errand UI UX, errand theme, errand HTML, errand template, errand website, errand pwa template.">
+    <meta name="description" content="AKROTECH HTML delivery website . delivery UI UX, delivery theme, delivery HTML, delivery template, delivery website, delivery pwa template,Deliveryio.">
     <meta name="author" content="IAKROTECH">
 
-    <title>IAKROTECH ERRANDS</title>
+    <title>Deliveryio</title>
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
@@ -71,6 +71,7 @@ if ($lamonth==12)
             <div class="col-12 align-self-start text-center">
             </div>
             <div class="col-12 align-self-center text-center">
+
                 <div class="loader-logo">
                     <div class="logo <?php echo $christmas; ?>"><img src="assets/img/favicons/favicon-32x32.png" alt="Quality Delievery Services"><span>AT</span>
                         <div class="loader-roller">
@@ -84,7 +85,7 @@ if ($lamonth==12)
                             <div></div>
                         </div>
                     </div>
-                    <h4 class="logo-text"><span>IAKROTECH</span><small></small></h4>
+                    <h4 class="logo-text"><span>Deliveryio</span><br>BY <br><small>IAKROTECH</small></h4>
                 </div>
             </div>
             <div class="col-12 align-self text-center">
@@ -200,7 +201,7 @@ if ($lamonth==12)
                     <div class="col-12 col-md-8 col-lg-5 col-xl-4 mx-auto align-self-center text-center">
                         <div class="loader-logo">
                              <div class="logo <?php echo $christmas; ?>"><img src="assets/img/favicons/favicon-32x32.png"><span>AK</span><span>TEC</span></div>
-                            <h4 class="logo-text"><span>IAKROTECH</span><small>Errand Services</small></h4>
+                            <h4 class="logo-text"><span>IAKROTECH</span><small>delivery Services</small></h4>
                         </div>
                         <br>
                         <br>
