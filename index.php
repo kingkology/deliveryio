@@ -19,7 +19,7 @@ if ($lamonth==12)
   $christmas="christmas";
 }
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
