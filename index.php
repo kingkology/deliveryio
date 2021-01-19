@@ -25,7 +25,7 @@ if ($lamonth==12)
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="AKROTECH HTML errand website . errand UI UX, errand theme, errand HTML, errand template, errand website, errand pwa template,Deliveryio.">
+    <meta name="description" content="AKROTECH errand,Deliveryio.">
     <meta name="author" content="IAKROTECH">
 
     <title>Deliveryio</title>
@@ -405,7 +405,7 @@ else
             <br>
         </div>
 
-        <div class="container-fluid position-relative px-0">
+        <div class="container-fluid position-relative px-0" id="services">
           <h3><center><strong>Our Services</strong></center></h3>
             
         </div>
