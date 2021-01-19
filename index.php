@@ -226,10 +226,10 @@ else
                 </a>
             </div>
             <div >
-                <a href="#about" class=""><span class="avatar avatar-30"><i class=" icon_lightbulb_alt"></i></span>About</a>
-                <a href="#services" class=""><span class="avatar avatar-30"><i class=" icon_id-2_alt"></i></span>Services</a>
+                <a href="#about" class="btn btn-link px-2"><span class="avatar avatar-30"><i class=" icon_lightbulb_alt"></i></span>About</a>
+                <a href="#services" class="btn btn-link px-2"><span class="avatar avatar-30"><i class=" icon_id-2_alt"></i></span>Services</a>
                 <a href="views/login/main.html" class=""><span class="avatar avatar-30"><i class="fa fa-lock"></i></span>Login</a>
-                <a href="register.php" class=""><span class="avatar avatar-30"><i class="fa fa-pencil"></i></span>Signup</a>
+                <a href="register.php" class="btn btn-link px-2"><span class="avatar avatar-30"><i class="fa fa-pencil"></i></span>Signup</a>
                 
             </div>
         </nav>
