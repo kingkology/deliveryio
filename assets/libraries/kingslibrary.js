@@ -9,6 +9,11 @@ Feel free to contribute to it on github @ https://github.com/kingkology/kingslib
 
 
 
+
+
+
+
+
 /*
 This displays a toast/popup message
 it takes 3 arguments.
@@ -59,6 +64,23 @@ function checknewpass(x,y,z)
 		document.getElementById(z).innerHTML="";
 
 	}
+
+}
+
+
+
+function show_hide_password(x) 
+{
+
+  let thetype=$("#"+x).attr('type');
+  if (thetype=='password') 
+  	{
+  		$("#"+x).attr('type','text');
+  	}
+  	else
+  	{
+  		$("#"+x).attr('type','password');
+  	}
 
 }
 
@@ -134,16 +156,13 @@ window.open('data:application/vnd.ms-excel,' + encodeURIComponent(html));*/
 
 
 //prints a div or a page
-
  function PrintContent(x)
 {
     var printid=x;
     var DocumentContainer = document.getElementById(printid);
     var WindowObject = window.open("", "PrintWindow","top=70,toolbars=no,scrollbars=yes,status=no,resizable=yes");
 
-    WindowObject.document.write('<link href="../assets/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">')
-    WindowObject.document.write('<link href="../assets/css/style.css" rel="stylesheet" type="text/css"/>')
-    WindowObject.document.write('<link href="../assets/css/mdb.min.css" rel="stylesheet" type="text/css"/>')
+    //add link to your css
     WindowObject.document.write('<link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>')
     WindowObject.document.writeln(DocumentContainer.innerHTML);
     WindowObject.document.close();
@@ -164,16 +183,16 @@ remember to modify the div class and css to fit your theme
 2. (b) represents the id to be given to the textbox, usually its the count value.
 3. (c) represents the name to be given to the text box, usually its the name in the json values.
 4. (x) represents the label name of the textbox
-5. (y) represents the property of the textbox (classes, properties or css)
+5. (y) represents the property of the textbox (classes, properties, event handlers or css)
 7. (z) represents the textbox type (text or number)
 
-eg: create_textbox("kofi","value1","username","Username","hidden disabled style='color:white;background:blue' onclick='view_details(1)'",'text')
+eg: create_textbox("kofi","value1","username","Username","hidden disabled style='color:white;background:blue' onclick='view_details(1)' ",'text')
 */
 function create_textbox(a,b,c,x,y,z)
 {
 
 	let the_textbox="";
-	the_textarea='<div class="form-group has-feedback">';
+	the_textarea='<div class="form-group ">';
 	if (x!="") {the_textbox=the_textbox+'<label>'+x+'</label>';}
 	the_textbox=the_textbox+'<input type="'+z+'" name="'+c+'" id="'+b+'" value="'+a+'" '+y+' >';
 	the_textarea=the_textarea+'</div>';
@@ -190,7 +209,7 @@ remember to modify the div class and css to fit your theme
 2. (b) represents the id to be given to the textarea, usually its the count value.
 3. (c) represents the name to be given to the text box, usually its the name in the json values.
 4. (x) represents the label name of the textarea
-5. (y) represents the property of the textarea (classes, properties or css)
+5. (y) represents the property of the textarea (classes, properties, event handlers or css)
 
 eg: create_textarea('kofi is a box','value1','username','Username',"hidden disabled style='color:white;background:blue' onclick='view_details(1)'")
 */
@@ -198,7 +217,7 @@ function create_textarea(a,b,c,x,y,z)
 {
 
 	let the_textarea="";
-	the_textarea='<div class="form-group has-feedback">';
+	the_textarea='<div class="form-group ">';
 	if (x!="") {the_textarea=the_textarea+'<label>'+x+'</label>';}
 	the_textarea=the_textarea+'<textarea class="form-control" name="'+c+'" id="'+b+'" '+y+' >'+a+'</textarea>';
 	the_textarea=the_textarea+'</div>';
@@ -215,7 +234,7 @@ remember to modify the div class and css to fit your theme
 2. (b) represents the id to be given to the combobox, usually its the count value.
 3. (c) represents the name to be given to the combobox, usually its the name in the json values.
 4. (x) represents the label name of the combobox
-5. (y) represents the property of the textarea (classes, properties or css)
+5. (y) represents the property of the textarea (classes, properties, event handlers or css)
 
 eg: create_combobox([{opt_val:admin,disp_val:Administrator},{opt_val:admin,disp_val:Administrator}],'value1','access_right','Username',"hidden disabled style='color:white;background:blue' onclick='view_details(1)'")
 */
@@ -225,7 +244,7 @@ function create_combobox(a,b,c,x,y,z)
 	if (y=='visible') {y="";}
 
 	let the_combobox="";
-	the_combobox='<div class="form-group has-feedback">';
+	the_combobox='<div class="form-group ">';
 	the_combobox=the_combobox+'<label>'+x+'</label>';
 	the_combobox=the_combobox+'<select class="form-control" type="'+q+'" name="'+c+'" id="'+b+'" '+y+' >';
 	for (var i = 0; i < a.length; i++) {
@@ -927,287 +946,428 @@ function round(value, decimals)
 
 
 
-function check_pin(x,y,z)
+
+
+// New function to track user's location.
+const trackLocation = ({ onSuccess, onError = () => { } }) => {
+  if ('geolocation' in navigator === false) {
+    return onError(new Error('Geolocation is not supported by your browser.'));
+  }
+
+  // Use watchPosition instead.
+  return navigator.geolocation.watchPosition(onSuccess, onError);
+};
+
+
+function handlePermission() {
+  navigator.permissions.query({name:'geolocation'}).then(function(result) {
+  	console.log('new page is fully loaded');
+    if (result.state == 'granted') {
+      console.log(result.state);
+      navigator.geolocation.getCurrentPosition(showPosition,showError);
+      
+    } else if (result.state == 'prompt') {
+      console.log(result.state);
+      initMap();
+    } else if (result.state == 'denied') {
+      console.log(result.state);
+      $('#myloc').click();
+    }
+    result.onchange = function() {
+      initMap();
+    }
+  });
+}
+
+
+function initMap() 
 {
 
-	let pagelocaction=x;
-	let message_label=y;
-	let textbox_container=z;
-	//change the button state to loading
-	$("#"+message_label).html('<h2><center><i class="fa fa-refresh fa-spin fa-1x"></i></center></h2>');
-	$.ajax({
-		url : pagelocaction,
-		type : "POST",
-		success : function(data)
-		{
-			if (data=="") 
-			{
-				$("#thesname").show();
-				$("#thefname").show();
-				$("#thedob").show();
-				$("#thetel").show();
-				return;
-			}
-			if (data=="Found") 
-				{
-					$("#"+textbox_container).css('border-color','green');
-					$("#"+message_label).css('color','green');
-					$("#"+message_label).html('In System');
-					$("#thesname").hide();
-					$("#thefname").hide();
-					$("#thedob").hide();
-					$("#thetel").hide();
-					return;
-				}
-			if (data=="Not Found") 
-				{
-					$("#thesname").show();
-					$("#thefname").show();
-					$("#thedob").show();
-					$("#thetel").show();
-					$("#"+textbox_container).css('border-color','orange');
-					$("#"+message_label).css('color','orange');
-					$("#"+message_label).html('Not In System');
-					return;
-				}
-			if (data=="This Record Has Been Issued") 
-				{
-					$("#thesname").show();
-					$("#thefname").show();
-					$("#thedob").show();
-					$("#thetel").show();
+  if (navigator.geolocation) {
+    
+    var the_access=document.getElementById('the_access').value;
+    if (the_access=="Driver") 
+    {
+    	// Use the new trackLocation function.
+    	 trackLocation({
+    	   onSuccess: ({ coords: { latitude: lat, longitude: lng } }) => {
+    	   	$.ajax({
+    	   		url : '../../../controllers/driver/location_update.php?lat='+lat+'&lng='+lng,
+    	   		type : "POST",
+    	   		success : function(data)
+    	   		{
+    	   			the_response=data;
+    	   			console.log(the_response);
 
-					$("#"+textbox_container).css('border-color','red');
-					$("#"+message_label).css('color','red');
-					$("#"+message_label).html(data);
-					return;
+    	   		},
+    	   		error : function(data) 
+    	   		{
+    	   			the_response=data;
+    	   			console.log(the_response);
+    	   		}
+    	   	})
+    	     //alert( lat+','+ lng );
+    	   },
+    	   onError: err =>
+    	     console.log(`Error: ${getPositionErrorMessage(err.code) || err.message}`)
+    	 });
+    }
+    else
+    {
+    	navigator.geolocation.getCurrentPosition(showPosition,showError);
+    }
 
-				}
-		},
-		error : function(data) 
-		{
-			$("#thesname").show();
-			$("#thefname").show();
-			$("#thedob").show();
-			$("#thetel").show();
-			$("#"+message_label).html('');
-			return;
-		}
+  } else {
+    console.log("Geolocation is not supported by this browser.");
+  }
+
+}
+
+
+function showPosition(position) {
+
+	var longt=position.coords.longitude;
+	var latz=position.coords.latitude;
+
+  //return position.coords.latitude+','+position.coords.longitude;
+  $("#gps_locsapan").html(position.coords.latitude+','+position.coords.longitude);
+  $("#gpsadd").val(position.coords.latitude+','+position.coords.longitude);
+
+
+   var input = document.getElementById('searchTextField');
+   var autocomplete = new google.maps.places.Autocomplete(input);
+     google.maps.event.addListener(autocomplete, 'place_changed', function () {
+         var place = autocomplete.getPlace();
+         document.getElementById('city2').value = place.name;
+         document.getElementById('cityLat').value = place.geometry.location.lat();
+         document.getElementById('cityLng').value = place.geometry.location.lng();
+         document.getElementById('errand_gps').value = place.geometry.location.lat()+','+place.geometry.location.lng();
+     });
+
+
+
+   var myLatlng = {lat: latz, lng: longt};
+
+
+   var map = new google.maps.Map(
+       document.getElementById('map'), {zoom: 15, center: myLatlng});
+
+   // Create the initial InfoWindow.
+   var infoWindow = new google.maps.InfoWindow(
+       {content: 'Your Current Location', position: myLatlng});
+   infoWindow.open(map);
+
+   //show cordinates
+  // document.getElementById('gpsadd').value =latz+","+longt;
+   //get place name
+   displayLocation(latz,longt);
+
+   // Configure the click listener.
+   
+   map.addListener('click', function(mapsMouseEvent) {
+     // Close the current InfoWindow.
+     infoWindow.close();
+
+     // Create a new InfoWindow.
+     infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+     infoWindow.setContent(mapsMouseEvent.latLng.toString());
+     infoWindow.open(map);
+     document.getElementById('gpsadd').value =mapsMouseEvent.latLng.lat()+","+mapsMouseEvent.latLng.lng();
+     //alert(mapsMouseEvent.latLng.lat());
+     //alert(mapsMouseEvent.latLng.lng());
+     displayLocation(mapsMouseEvent.latLng.lat(),mapsMouseEvent.latLng.lng());
+
+   });
+
+   
+
+
+}
+
+function showError(error) {
+
+	if (error.code == error.PERMISSION_DENIED)
+	{
+	      console.log("you denied me :-(");
 	}
-	);
+	
+
 }
 
 
-function not_in_system(x,y,z)
+
+function displayLocation(latitude,longitude)
+{
+        var request = new XMLHttpRequest();
+
+        var method = 'GET';
+        var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+latitude+','+longitude+'&sensor=true&key=AIzaSyBCYezxxo7Je-RFcVCkL1Ac3hDnp3qqkLU';
+        var async = true;
+
+        request.open(method, url, async);
+        request.onreadystatechange = function(){
+          if(request.readyState == 4 && request.status == 200){
+            //var address = response.data.results[0].formatted_address;
+            var data = JSON.parse(request.responseText);
+            var address = data.results[0];
+            document.getElementById('psadd').value =address.formatted_address;
+            //console.log(data);
+          }
+        };
+        request.send();
+};
+
+
+
+function addproduct(a,b,c,d)
 {
 
-	let pagelocaction=x;
-	//set default value to attach to url as none
-	pagelocaction=pagelocaction+"?default_value=none";
-	let arrz=[];
-	let values_to_send=[];
-	let retz=y;
-	//split textboxvalues by the ","
-	arrz=Array.from(retz.split(","));
-	values_to_send=JSON.stringify(arrz)
-	values_to_send=JSON.parse(values_to_send);
-	let len=values_to_send.length;
-	//button id
-	let thebtn="#"+z;
-	let btnz=$(thebtn).html();
-	//change the button state to loading
-	$(thebtn).html('<i class="fa fa-refresh fa-spin"></i>');
-	//check for empty values
-	for (let i = 0; i <= len-1; i++) 
-	{	
-//		if ($("#"+values_to_send[i]).val()=="") {Swal.fire('warning',values_to_send[i]+" is empty",'warning');$(thebtn).html(btnz);return;}else{pagelocaction=pagelocaction+'&'+values_to_send[i]+'='+$("#"+values_to_send[i]).val();}
-		pagelocaction=pagelocaction+'&'+values_to_send[i]+'='+$("#"+values_to_send[i]).val();
-	
+var a=a;
+var b=b;
+var c=c;
+var d=d;
+
+var product = [];
+var qty= [];
+var price= [];
+var comment= [];
+
+if (a!="" && b!="" && c!="" && d!="") 
+{
+
+// Check browser support
+if (typeof(Storage) !== "undefined") 
+{
+
+var products = localStorage.getItem("product");
+
+if(products !==null)
+{
+
+var qtys= localStorage.getItem("qty");
+var prices= localStorage.getItem("price");
+var comments= localStorage.getItem("comment");
+
+product = JSON.parse(products);
+qty = JSON.parse(qtys);
+price = JSON.parse(prices);
+comment = JSON.parse(comments);
+//add recent to last item
+product[product.length] = a;
+qty[qty.length] = b;
+price[price.length] = c;
+comment[comment.length] = d;
+
+// Store
+localStorage.setItem("product", JSON.stringify(product));
+localStorage.setItem("qty", JSON.stringify(qty));
+localStorage.setItem("price", JSON.stringify(price));
+localStorage.setItem("comment", JSON.stringify(comment));
+
+document.getElementById('pname').value="";
+document.getElementById('pqty').value="";
+document.getElementById('pprice').value="";
+document.getElementById('the_comment').value="";
+
+}
+else 
+{
+var product = [a];
+var qty= [b];
+var price= [c];
+var comment= [d];
+
+// Store
+localStorage.setItem("product", JSON.stringify(product));
+localStorage.setItem("qty", JSON.stringify(qty));
+localStorage.setItem("price", JSON.stringify(price));
+localStorage.setItem("comment", JSON.stringify(comment));
+
+document.getElementById('pname').value="";
+document.getElementById('pqty').value="";
+document.getElementById('pprice').value="";
+document.getElementById('the_comment').value="";
+
+}
+
+
+} 
+
+
+}
+
+viewcart();
+
+}
+
+
+function viewcart()
+{
+
+	document.getElementById('theproducts').innerHTML="";
+	document.getElementById('the_product').value="";
+	document.getElementById('the_qty').value="";
+	document.getElementById('the_price').value="";
+	document.getElementById('the_comment').value="";
+
+	let sum_amount=0.00;
+
+	// Check browser support
+	if (typeof(Storage) !== "undefined") 
+	{
+
+		var products = localStorage.getItem("product");
+
+		if(products !==null)
+		{
+
+		var qtys= localStorage.getItem("qty");
+		var prices= localStorage.getItem("price");
+		var comments= localStorage.getItem("comment");
+
+
+		product = JSON.parse(products);
+		qty = JSON.parse(qtys);
+		price = JSON.parse(prices);
+		comment = JSON.parse(comments);
+
+		  
+		retz=product.length-1;
+
+
+		for (var i = 0; i <= retz; i++) 
+		{
+
+				$("#theproducts").append('<tr id="'+i+'"><td>'+product[i]+'</td><td>'+qty[i]+'</td><td>GHc '+price[i]+'</td><td>'+comment[i]+'</td><td><button class="jsgrid-button jsgrid-delete-button btn-danger" type="button" title="Remove" onclick="remitem('+i+');">X</button></td></tr>');
+
+				if (i<retz) 
+				{
+					$("#the_product").val($("#the_product").val()+product[i]+',');
+					$("#the_qty").val($("#the_qty").val()+qty[i]+',');
+					$("#the_price").val($("#the_price").val()+price[i]+',');
+					$("#the_comment").val($("#the_comment").val()+comment[i]+',');
+				}
+				else
+				{
+					$("#the_product").val($("#the_product").val()+product[i]);
+					$("#the_qty").val($("#the_qty").val()+qty[i]);
+					$("#the_price").val($("#the_price").val()+price[i]);
+					$("#the_comment").val($("#the_comment").val()+comment[i]);
+				}
+			
+				sum_amount=sum_amount+((qty[i]*1)*(price[i]*1));
+
+		}
+
+			$("#eprice").val(sum_amount);
+
+
+		} 
+
+
 	}
 
-	$.ajax({
-		url : pagelocaction,
-		type : "POST"})
-		.done(function(responseText) 
-	 	{
-	 	   let data=responseText;
-	 	   if (data=="") 
-	 	   {
-	 	   	$("#thesname").show();
-	 	   	$("#thefname").show();
-	 	   	$("#thedob").show();
-	 	   	$("#thetel").show();
-	 	   	$(thebtn).html(btnz);
-	 	   	$('#pinz').focus();
-	 	   	Swal.fire('No Data Returned',data,'warning');$(thebtn).html(btnz);
-	 	   }
-	 	   if (data=="This record has been transfered to your station." || data=="Record Added Successfully") 
-	 	   {
-	 	   	$('#pinz').val('GHA-');$('#sn').val('');$('#dob').val('');$('#cnumz').val('');$('#fn').val('');$('#box_num').val('');
-	 	   	$("#pinz").css('border-color','black');$("#is_in").css('color','black');$("#is_in").html('');
-	 	   	$("#thesname").show();
-	 	   	$("#thefname").show();
-	 	   	$("#thedob").show();
-	 	   	$("#thetel").show();
-	 	   	$(thebtn).html(btnz);
-	 	   	$('#pinz').focus();
-	 	   	Swal.fire('Success',data,'success');
-	 	   }
-	 	   else
-	 	   {
-	 	   	//$("#pinz").css('border-color','black');$("#is_in").css('color','black');$("#is_in").html('');return;
-	 	   	$("#thesname").show();
-	 	   	$("#thefname").show();
-	 	   	$("#thedob").show();
-	 	   	$("#thetel").show();
-	 	   	$(thebtn).html(btnz);
-	 	   	$('#pinz').focus();
-	 	   	Swal.fire('error',data,'error');
-	 	   }
-	 	   
-	 	   $(thebtn).html(btnz); 	
 
-	 	})
-	 	// using the fail promise callback
-	 	.fail(function(responseText) 
-	 	{
-			Swal.fire('Error', responseText, "error");
-	 	    return;
-	 	});
-	$(thebtn).html(btnz);
 }
 
 
-function new_request(x,y)
-{
-	let thebtn="#"+y;
-	let btnz=$(thebtn).html();
-	let z=btnz;
-
-	//change the location state to loading
-	$(thebtn).html('<center><i class="fa fa-refresh fa-3x fa-spin"></i></center>');
-
-	  /*console.log(output);*/
-	$.ajax({
-	    type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-	    url         : x, // the url where we want to POST
-	    /*data        : the_values,*/ // our data object
-	    dataType    : 'json' // what type of data do we expect back from the server
-	})
-	// using the done promise callback
-	    .done(function(responseText) 
-	    {
-	    	// nreceive the response after sending the request
-	    	let response=Object.values(responseText);
-	      	response=response[0];
-	      	Swal.fire("Success", response, "success");
-
-	      	myTimer=setInterval(my_request,10000);
-	      	return;	
-	    })
-	    // using the fail promise callback
-	    .fail(function(responseText) 
-	    {
-	    	$(thebtn).html(btnz);
-		    //Server failed to respond - Show an error message
-		    let response=Object.values(responseText);
-		    response_value=Object.values(response[17]);
-		    response_value=response_value[0];
-
-		    let response_code=response[18];
-		    let code_text=response[19];
-
-		    Swal.fire(response_code+'\n'+code_text, response_value, "error");
-		    return;
-	    });
-}
-
-function my_request()
+function remitem(x)
 {
 
-	$.ajax({
-		url : '../../cims/apis/controllers/requests/my_center_request.php',
-		type : "POST",
-		success : function(data)
+	var itm=x;
+
+
+	// Check browser support
+	if (typeof(Storage) !== "undefined") 
+	{
+			
+		var products = localStorage.getItem("product");
+
+		if(products !==null)
 		{
-			if (data=="Request Approved") 
-			{	
-				clearInterval(my_request);
-				let thebtn="#the_place";
-				$(thebtn).html('<center><h3>Kindly refresh page</h3></center>');
-				Swal.fire('','Your Request For A Center Change Has Been Approved.Kindly Refresh Page For Changes To Reflect','success');
-					
-			}
-			else if (data=="Request Rejected") 
+
+			var qtys= localStorage.getItem("qty");
+			var prices= localStorage.getItem("price");
+			var comments= localStorage.getItem("comment");
+
+
+			product = JSON.parse(products);
+			qty = JSON.parse(qtys);
+			price = JSON.parse(prices);
+			comment = JSON.parse(comments);
+
+
+			product.splice(itm,1);
+			qty.splice(itm,1);
+			price.splice(itm,1);
+			comment.splice(itm,1);
+
+			if(product !==null)
 			{
-				clearInterval(my_request);
-				Swal.fire('','Your Request Is Rejected.','error');
 
-				let thebtn="#the_place";
-				$(thebtn).html('<center><h3>Kindly refresh page</h3></center>');
-					
+				// Store
+				localStorage.setItem("product", JSON.stringify(product));
+				localStorage.setItem("qty", JSON.stringify(qty));
+				localStorage.setItem("price", JSON.stringify(price));
+				localStorage.setItem("comment", JSON.stringify(comment));
+
+				viewcart();
+
 			}
-			else
+
+			else  
 			{
-				
+
+				//localStorage.clear();
+				localStorage.removeItem("product");
+				localStorage.removeItem("qty");
+				localStorage.removeItem("price");
+				localStorage.removeItem("comment");
+
+				viewcart();
+
 			}
 
-		},
-		error : function(data) 
-		{	
-			clearInterval(my_request);
-			let thebtn="#the_place";
-			$(thebtn).html('<center><h3>Kindly refresh page</h3></center>');
-	      	//Server failed to respond - Show an error message
-	      	let response=Object.values(responseText);
-	      	response_value=Object.values(response[17]);
-	      	response_value=response_value[0];
 
-	      	let response_code=response[18];
-	      	let code_text=response[19];
 
-	      	Swal.fire(response_code+'\n'+code_text, response_value, "error");
-	      	return;
+		  
 		}
-	});
+
+	}
+
+
 }
 
 
+function clear_storage()
+{
+	//localStorage.clear();
+	localStorage.removeItem("product");
+	localStorage.removeItem("qty");
+	localStorage.removeItem("price");
+	localStorage.removeItem("comment");
+}
 
 
-function approve_request(v,w,x,y,z,k)
+function get_charge()
 {
 
-	//button id
-	let thebtn="#"+k;
-	let btnz=$(thebtn).html();
-	//change the button state to loading
-	$(thebtn).html('<i class="fa fa-refresh fa-spin"></i>');
-	let theurl='../apis/controllers/requests/approve_center_change.php?pinz='+v+'&center='+w+'&center_name='+x+'&center_statz='+y+'&request_statz='+z;
 
-	$.ajax({
-		url : theurl,
-		type : "POST"
-	})
-	// using the done promise callback
-	    .done(function(data) 
-	    {
-	    	$(thebtn).html(btnz);
-	    	// nreceive the response after sending the request
-	    	if (data=="Success") {Swal.fire('Success','Request Updated Successfully','success');$('#show_n_request').click();}
-	    	else if (data=="Failed") {Swal.fire('Error','Error Occured While approving request','warning');}
-	    	else if (data=="Approval Failed.Error Adding New Center") {Swal.fire('Error','Approval Failed.Error Adding New Center','error');}
-	    	else{Swal.fire('',data,'warning');}
-	      	return;	
-	    })
-	    // using the fail promise callback
-	    .fail(function(data) 
-	    {
-	      //Server failed to respond - Show an error message
-	      $(thebtn).html(btnz);
-	      Swal.fire('error', data, "error");
-	      return;
-	    });
+$('#fin_tot').val(($('#er_tot').val()*1)+($('#del_tot').val()*1));
 
+}	
+
+
+function toggle_online(x)
+{
 	
-}
+
+	if (($('#'+x).attr('aria-pressed'))=="true") 
+		{
+			send_url_noj('../controllers/general/oline_stats.php?v=0');
+		}
+		else
+		{
+			send_url_noj('../controllers/general/oline_stats.php?v=1');
+		}
+}	
