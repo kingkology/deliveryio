@@ -1,24 +1,3 @@
-<?php 
-session_start();
-
-$dt=new DateTime('now', new DateTimezone('Africa/Accra'));
-$ladate = $dt->format('Y-m-d');
-$lamonth= $dt->format('m');
-$latodayz = $ladate;
-$ladatez = $dt->format('Y-m-d H:i:s');
-$latimez = $dt->format('H:i:s');
-
-$christmas="";
-$get_drivers=50;
-$get_clients=200;
-$get_errands=600;
-$get_partners=14;
-
-if ($lamonth==12)
-{
-  $christmas="christmas";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,120 +53,22 @@ if ($lamonth==12)
 
 </head>
 
-<?php 
-if (isset($_SESSION['backend_message'])) 
-{
-  ?>
-  <body class="ui-rounded" onload="Swal.fire('<?php echo $_SESSION['message_type']; ?>', '<?php echo $_SESSION['backend_message']; ?>', '<?php echo $_SESSION['message_type']; ?>');">
-  <?php
-  unset($_SESSION['message_type']);
-  unset($_SESSION['backend_message']);
-  session_unset(); 
-} 
-else 
-{
-?>
+
 <body class="ui-rounded" >
-<?php
-}
-?>
+
 
     <!-- Page laoder -->
     <div class="container-fluid pageloader">
-        <?php if ($christmas=="christmas"):?>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <div class="snow"></div>
-  <?php endif?>
+        
+  
+  
         <div class="row h-100">
             <div class="col-12 align-self-start text-center">
             </div>
             <div class="col-12 align-self-center text-center">
 
                 <div class="loader-logo">
-                    <div class="logo <?php echo $christmas; ?>"><img src="assets/img/favicons/favicon-32x32.png" alt="Quality Delievery Services"><span>AT</span>
+                    <div class="logo "><img src="assets/img/favicons/favicon-32x32.png" alt="Quality Delievery Services"><span>AT</span>
                         <div class="loader-roller">
                             <div></div>
                             <div></div>
@@ -203,7 +84,7 @@ else
                 </div>
             </div>
             <div class="col-12 align-self text-center">
-                <button class="btn btn-primary <?php echo $christmas; ?>" type="button" disabled>
+                <button class="btn btn-primary " type="button" disabled>
                     <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                     Loading...
                 </button>
@@ -216,7 +97,7 @@ else
     <header class="header fixed-top header-fill">
         <nav class="navbar">
             <div>
-                <a class="btn btn-secondary btn-sm <?php echo $christmas; ?>" href="tel:+233544720636" style="background-color:yellow;color:black;"><span class="avatar avatar-30"><i class="fa fa-phone" style="color:black;"></i></span>Call Us</a>
+                <a class="btn btn-secondary btn-sm " href="tel:+233544720636" style="background-color:yellow;color:black;"><span class="avatar avatar-30"><i class="fa fa-phone" style="color:black;"></i></span>Call Us</a>
             </div>
             <div>
                 <a class="navbar-brand " href="index.php">
@@ -227,9 +108,8 @@ else
             </div>
             <div >
                 <a href="#about" class="btn btn-link px-2"><span class="avatar avatar-30"><i class=" icon_lightbulb_alt"></i></span>About</a>
-                <a href="#services" class="btn btn-link px-2"><span class="avatar avatar-30"><i class=" icon_id-2_alt"></i></span>Services</a>
-                <a href="views/login/main.html" class=""><span class="avatar avatar-30"><i class="fa fa-lock"></i></span>Login</a>
-                <a href="register.php" class="btn btn-link px-2"><span class="avatar avatar-30"><i class="fa fa-pencil"></i></span>Signup</a>
+                <a href="views/login/" class=""><span class="avatar avatar-30"><i class="fa fa-lock"></i></span>Login</a>
+                <a href="views/signup/" class="btn btn-link px-2"><span class="avatar avatar-30"><i class="fa fa-pencil"></i></span>Signup</a>
                 
             </div>
         </nav>
@@ -237,50 +117,107 @@ else
     <!-- Fixed navbar ends -->
 
 
+
+
+
     
 
     <!-- Begin page content -->
-    <main class="flex-shrink-0 main-container py-0">
+   <p>&nbsp</p>
+   <p>&nbsp</p>
+   <p>&nbsp</p>
 
-        <div class="bg-white position-relative overflow-hidden">
-            <div class=" ">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
-                </ol>
-                <div class="carousel-inner" style="width:100%;">
-                    <div class="carousel-item h-800 active" >
-                        <div class="background" style="background-image: url(&quot;assets/img/banner1.jpg&quot;);">
-                            <img src="assets/img/banner1.jpg" alt="fast delivery" style="display: none;">
+
+   <div class="row">
+     <div class="col-md-12 col-l-12 col-xl-12" style="padding-left:15px;padding-right:15px;">
+        <div class="card shadow-sm border-0 bg-danger">
+            <div class="card-body">
+                <div class="media">
+                    <div class="media-body text-white">
+                            <div class=" ">
+                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                                
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" >
+                                        <h3><center>Always remember to mask up</center></h3>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <h3><center>Remember sanitize your hands</center></h3>
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <h3><center>Maintain social distance</center></h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-item h-800">
-                        <div class="background" style="background-image: url(&quot;assets/img/banner2.jpg&quot;);">
-                            <img src="assets/img/banner2.jpg" alt="safe delivery" style="display: none;">
-                        </div>
-                    </div>
-                    <div class="carousel-item h-800 ">
-                        <div class="background" style="background-image: url(&quot;assets/img/banner3.jpg&quot;);">
-                            <img src="assets/img/banner3.jpg" alt="cheap" style="display: none;">
-                        </div>
-                    </div>
+                    <button class="btn btn-light shadow-sm btn-44">
+                        <i class="fa fa-info "></i>
+                    </button>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
-        </div>
-        </div>
-    </main>
+        </div>                    
+      </div>
+   </div>
+   <p>&nbsp</p>
 
- 
+      <div class="row">
+        <div class="col-md-12 col-l-12 col-xl-12">
+          <div class="card shadow-sm border-0 mb-3">
+              <div class="card-body">
+                  <div class="media">
+                    <div class="media-body">
+                          <div class=" ">
+                          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                              <ol class="carousel-indicators">
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="1" class=""></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="3" class=""></li>
+                              </ol>
+                              <div class="carousel-inner" >
+                                  <div class="carousel-item h-800 active" >
+                                      <div class="background" style="background-image: url(&quot;assets/img/bg1.png&quot;);object-fit:contain;">
+                                          <img src="assets/img/bg1.png" alt="fast delivery" style="display: none;object-fit:contain;">
+                                      </div>
+                                  </div>
+                                  <div class="carousel-item h-800">
+                                      <div class="background" style="background-image: url(&quot;assets/img/bg2.png&quot;);object-fit:contain;">
+                                          <img src="assets/img/bg2.png" alt="safe delivery" style="display: none;object-fit:contain;">
+                                      </div>
+                                  </div>
+                                  <div class="carousel-item h-800 ">
+                                      <div class="background" style="background-image: url(&quot;assets/img/bg3.png&quot;);object-fit:contain;">
+                                          <img src="assets/img/bg3.png" alt="cheap" style="display: none;object-fit:contain;">
+                                      </div>
+                                  </div>
+                                  <div class="carousel-item h-800 ">
+                                      <div class="background" style="background-image: url(&quot;assets/img/bg4.png&quot;);object-fit:contain;">
+                                          <img src="assets/img/bg4.png" alt="cheap" style="display: none;object-fit:contain;">
+                                      </div>
+                                  </div>
+                              </div>
+                              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                              </a>
+                          </div>
+                      </div>
+                    </div>
+                                     
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+        
+
+     
     
 
 
@@ -291,25 +228,28 @@ else
       <div id="about"  class="container-fluid bg-white px-0">
           <div class="row no-gutters">
 
-            <div class="col-12 col-md-6 position-relative overflow-hidden section-150">
-                <div class="background">
-                    <img src="assets/img/c4.jpg" alt="about Deliveryio">
+            <div class="col-12 col-md-6 px-3">
+                <div class="row mx-0">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
+                        <br>
+                        <h6 class="font-weight-light text-uppercase text-mute">We are</h6>
+                        <h3 class="mt-3">Deliveryio</h3>
+                        <h5 class="font-weight-medium">Delivery service providers</h5>
+                        <p class="mt-4 text-mute">Our One<span> goal</span><span> is</span> to serve as the cheapest, most reliable and fastest 3rd party delivery service provider between any client and any seller/supplier.</p>
+
+                        <p class="my-4"><br><span class="text-mute">Powered by <a href="https:iakrotech.com/" target="_blank">I-Akrotech</a></span></p>
+
+                    </div>
                 </div>
             </div>
 
-              <div class="col-12 col-md-6 section-150 px-3">
-                  <div class="row mx-0">
-                      <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
-                          <h6 class="font-weight-light text-uppercase text-mute">We are</h6>
-                          <h3 class="mt-3">Deliveryio</h3>
-                          <h5 class="font-weight-medium">Delivery service providers</h5>
-                          <p class="mt-4 text-mute">Our One<span> goal</span><span> is</span> to serve as the cheapest, most reliable and fastest 3rd party delivery service provider between any client and any seller/supplier.</p>
+            <div class="col-12 col-md-6 position-relative section-150">
+                <div class="background">
+                    <img src="assets/img/bg6.png" alt="about Deliveryio" style="object-fit:contain;">
+                </div>
+            </div>
 
-                          <p class="my-4"><br><span class="text-mute">Powered by <a href="https:iakrotech.com/" target="_blank">I-Akrotech</a></span></p>
-
-                      </div>
-                  </div>
-              </div>
+              
           </div>
       </div>
 
@@ -406,21 +346,25 @@ else
         </div>
 
         <div class="container-fluid position-relative px-0" id="services">
+          <br>
           <h3><center><strong>Our Services</strong></center></h3>
             
         </div>
+
+       
+
         <div class="container-fluid bg-white px-0">
             <div class="row no-gutters">
-                <div class="col-12 col-md-6 position-relative overflow-hidden">
+                <div class="col-12 col-md-6 position-relative overflow-hidden section-150">
                     <div class="background">
-                        <img src="assets/img/food.jpg" alt="Food Delivery">
+                        <img src="assets/img/food.png" alt="Food Delivery">
                     </div>
                 </div>
                 <div class="col-12 col-md-6 section-150 px-3">
                     <div class="row  mx-0">
                         <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
-                            <h6 class="font-weight-light text-uppercase text-mute">Food Delivery</h6>
-                            <h3 class="mt-3">We help you pickup your food from any eatery at any given time.</h3>
+                            <h6 class="font-weight-light text-uppercase text-mute">Food Purchase & Delivery</h6>
+                            <h3 class="mt-3">We help you purchase or pickup your food from any eatery at any given time.</h3>
                             <h5 class="font-weight-medium">Just let us know when you need it.</h5>
                         </div>
                     </div>
@@ -442,7 +386,7 @@ else
                 </div>
                 <div class="col-12 col-md-6 position-relative overflow-hidden section-150">
                     <div class="background">
-                        <img src="assets/img/safe.jpg" alt="">
+                        <img src="assets/img/safe.jpg" alt="package pickup">
                     </div>
                 </div>
             </div>
@@ -450,23 +394,26 @@ else
 
         <div class="container-fluid bg-white px-0">
             <div class="row no-gutters">
-                <div class="col-12 col-md-6 position-relative overflow-hidden">
+              <div class="col-12 col-md-6 section-150 px-3">
+                  <div class="row  mx-0">
+                      <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
+                          <h6 class="font-weight-light text-uppercase text-mute">Drug purchase & Delivery</h6>
+                          <h3 class="mt-3">We help you purchase or pickup your medicine from anywhere at any given time.</h3>
+                          <h5 class="font-weight-medium">From pharmacy, hospital etc</h5>
+                      </div>
+                  </div>
+              </div>
+                <div class="col-12 col-md-6 position-relative overflow-hidden section-150">
                     <div class="background">
-                        <img src="assets/img/med.png" alt="Food Delivery">
+                        <img src="assets/img/med.png" alt="drug Delivery">
                     </div>
                 </div>
-                <div class="col-12 col-md-6 section-150 px-3">
-                    <div class="row  mx-0">
-                        <div class="col-12 col-md-10 col-lg-8 col-xl-7 mx-auto">
-                            <h6 class="font-weight-light text-uppercase text-mute">Drug Delivery</h6>
-                            <h3 class="mt-3">We help you pickup your medicine from anywhere at any given time.</h3>
-                            <h5 class="font-weight-medium">From pharmacy, hospital etc</h5>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
         </div>
+
+     
 
     </main>
     <!-- End of page content -->
@@ -478,13 +425,13 @@ else
         
         <div class="container-fluid">
             
-            <p class="text-center">IAKROTECH <span class="text-mute"> SERVICES <a href="https://maxartkiller.com/" target="_blank"></a> </span><span class="text-danger <?php echo $christmas; ?>"><img src="assets/img/favicons/favicon-32x32.png"></span></p>
+            <p class="text-center">IAKROTECH <span class="text-mute"> SERVICES <a href="https://maxartkiller.com/" target="_blank"></a> </span><span class="text-danger "><img src="assets/img/favicons/favicon-32x32.png"></span></p>
         </div>
     </footer>
     <!-- Footer ends -->
 
     <!-- scroll to top button -->
-    <button type="button" class="btn btn-default default-shadow scrollup bottom-right position-fixed btn-44 <?php echo $christmas; ?>"><span class="arrow_carrot-up"></span></button>
+    <button type="button" class="btn btn-default default-shadow scrollup bottom-right position-fixed btn-44 "><span class="arrow_carrot-up"></span></button>
     <!-- scroll to top button ends-->
 
 
@@ -517,26 +464,9 @@ else
     <!-- Customized jquery file  -->
     <script src="assets/js/main.js"></script>
 
-    <!-- Masonry js -->
-        <script src="assets/vendor/masonry/masonry.pkgd.min.js"></script>
 
-        <!-- Customized jquery file  -->
-        <script src="assets/js/main.js"></script>
-        <script src="assets/js/color-scheme-demo.js"></script>
 
-        <script>
-            "use strict"
-            $(document).ready(function() {
-                /* Swiper slider */
-                var swiper = new Swiper('.introslider', {
-                    autoplay: true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                    },
-                });
-            });
-
-        </script>
+        
 
 
        
