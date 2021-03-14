@@ -143,7 +143,7 @@
                                         <h3><center>Always remember to mask up</center></h3>
                                     </div>
                                     <div class="carousel-item">
-                                        <h3><center>Remember sanitize your hands</center></h3>
+                                        <h3><center>Remember to sanitize your hands</center></h3>
                                     </div>
                                     <div class="carousel-item ">
                                         <h3><center>Maintain social distance</center></h3>
