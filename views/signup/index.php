@@ -167,7 +167,7 @@
                                 </a>
                             </div>
                             <div class="card-footer">
-                                <a href="javascript:void(0);" type="button" class="mb-2 btn btn-outline-info" data-toggle="modal" data-target="#benefits"><i class="fa fa-info"></i> </a>
+                                <a href="javascript:void(0);" type="button" class="mb-2 btn btn-outline-info" data-toggle="modal" data-target="#benefits" onclick="call_pagelet('../../apis/controllers/benefits/client.php','benefit_content')"><i class="fa fa-info"></i> </a>
                             </div>
                             <div class="card-footer">
                                 <a href="client.php" type="button" class="mb-2 btn btn-outline-danger">Signup as client </a>
@@ -196,6 +196,16 @@
 
     <!-- Required jquery and libraries -->
     <script src="../../assets/js/jquery-3.3.1.min.js"></script>
+
+    <!-- Required jquery and libraries -->
+    <script type="text/javascript" src="../../assets/libraries/jquery-3.4.0.min.js"></script>
+
+    <script type="text/javascript" src="../../assets/libraries/toaster/jquery.toaster.js"></script>
+    <script type="text/javascript" src="../../assets/libraries/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+    <script type="text/javascript" src="../../assets/libraries/kingslibrary.js"></script>
+
+
     <script src="../../assets/js/popper.min.js"></script>
     <script src="../../assets/vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script>
 
@@ -219,8 +229,8 @@
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            Content here
+                        <div class="modal-body" id="benefit_content">
+                            ...
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
