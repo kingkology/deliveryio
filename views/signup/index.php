@@ -126,7 +126,7 @@
                                 </a>
                             </div>
                             <div class="card-footer">
-                                <a href="javascript:void(0);" type="button" class="mb-2 btn btn-outline-info" data-toggle="modal" data-target="#benefits"><i class="fa fa-info"></i> </a>
+                                <a href="javascript:void(0);" type="button" class="mb-2 btn btn-outline-info" data-toggle="modal" data-target="#benefits" onclick="call_pagelet('../../apis/controllers/benefits/partner.php','benefit_content')"><i class="fa fa-info"></i> </a>
                             </div>
                             <div class="card-footer">
                                 <a href="partner.php" type="button" class="mb-2 btn btn-outline-danger">Signup as partner </a>
@@ -145,7 +145,7 @@
                                 </a>
                             </div>
                             <div class="card-footer">
-                                <a href="javascript:void(0);" type="button" class="mb-2 btn btn-outline-info" data-toggle="modal" data-target="#benefits"><i class="fa fa-info"></i> </a>
+                                <a href="javascript:void(0);" type="button" class="mb-2 btn btn-outline-info" data-toggle="modal" data-target="#benefits" onclick="call_pagelet('../../apis/controllers/benefits/driver.php','benefit_content')"><i class="fa fa-info"></i> </a>
                             </div>
                             <div class="card-footer">
                                 <a href="driver.php" type="button" class="mb-2 btn btn-outline-danger">Signup as driver </a>
